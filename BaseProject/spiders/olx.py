@@ -7,7 +7,7 @@ class OlxSpider(scrapy.Spider):
     start_urls = ["https://www.olx.com.br/computadores-e-acessorios/notebook-e-netbook/estado-rj"]
 
     def start_requests(self):
-        for pagina in range(1,20):
+        for pagina in range(1, 15):
             yield scrapy.Request(f"https://www.olx.com.br/computadores-e-acessorios/notebook-e-netbook/estado-rj?o={pagina}")
         
     def parse(self, response, **kwargs):
